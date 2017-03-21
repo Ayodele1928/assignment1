@@ -14,13 +14,13 @@
  		if(array_key_exists('login', $_POST)){ //for login authentication
  			$error = array();
 
- 			if(empty($_POST['admin_name'])){ //username
+ 			if(empty($_POST['admin_name'])){ //If user name is empty
  				$error[] = "Please enter your Username";
  			} else {
  				$uname = (mysqli_real_escape_string($db, $_POST['admin_name']));
  			}
 
- 			if(empty($_POST['password'])){ //password
+ 			if(empty($_POST['password'])){ // if password is empty
  				$error[] = "Please enter your Password";
  			} else {
  				$pword = md5(mysqli_real_escape_string($db, $_POST['password']));
