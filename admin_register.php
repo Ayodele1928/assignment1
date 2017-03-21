@@ -14,13 +14,13 @@
 	if (array_key_exists('login', $_POST)){
 		$error = array();
 
-		if (empty($_POST['admin_name'])){
+		if (empty($_POST['admin_name'])){ //if Username column is empty
 		$error[] = "Enter a new admin name";
 		} else{
 			$admin_name = mysqli_real_escape_string($db, $_POST['admin_name']);
 		}
 
-		if (empty($_POST['password'])) {
+		if (empty($_POST['password'])) { //if password column is empty
 			$error[] = "Enter admin password";
 		} else{
 			$pword = md5(mysqli_real_escape_string($db, $_POST['password']));
